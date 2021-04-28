@@ -9,7 +9,7 @@ Extract the files from the downloaded zip file.
 
 Download simple-sysmon.xml from this repo.
 
-When you install Sysmon, it be added as a Windows service using the configuration in a file you specify. Install with the following:
+When you install Sysmon, it be added as a Windows service using the configuration in a file you specify. Install with the following, from an elevated command prompt:
 
 `sysmon64.exe -i simple-sysmon.xml -accepteula`
 
