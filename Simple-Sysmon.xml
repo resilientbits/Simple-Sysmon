@@ -1,0 +1,34 @@
+<Sysmon schemaversion="4.60">
+  <HashAlgorithms>*</HashAlgorithms>
+  <CheckRevocation />
+  <DnsLookup>False</DnsLookup>
+  <EventFiltering>
+    <FileCreate onmatch="include">
+
+      <!-- Add rules here to track for file creation activities -->
+
+      <TargetFilename name="Technique: 1053.005 (Scheduled Tasks)" condition="contains">C:\Windows\System32\Tasks</TargetFilename>
+
+    </FileCreate>
+    <RuleGroup name="Process Creation" groupRelation="or">
+      <ProcessCreate onmatch="include">
+
+           <!-- Add rules here to track for process creation activities, such as by the executable name or command-line inclusions -->
+
+          <CommandLine name="Technique: T1003.002 (Dumping the SAM)" condition="contains any">save HKLM\SAM;save HKLM\System</CommandLine>
+          <OriginalFileName name="Technique: T1127.001 (MSBuild)" condition="contains">msbuild.exe</OriginalFileName>
+
+      </ProcessCreate>
+    </RuleGroup>
+
+    <ProcessTerminate onmatch="include">
+    </ProcessTerminate>
+
+    <NetworkConnect onmatch="include">
+    </NetworkConnect>
+
+    <FileCreateTime onmatch="include">
+    </FileCreateTime>
+
+  </EventFiltering>
+</Sysmon>
