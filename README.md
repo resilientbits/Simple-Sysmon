@@ -1,5 +1,5 @@
 # Simple-Sysmon
-It includes some basic detections for a few Atomic Red Tests to get you started, and you can improve and build out those detections from there.
+This is a simple starter configuration for an intro to Atomic Red Team session. It includes basic detections for a few Atomic Red Tests to get you started, and you can improve and build out those detections from there.
 
 ## Installation
 
